@@ -1,0 +1,30 @@
+﻿<div id="formContent">
+
+    @*@using (Ajax.BeginForm("Index", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "jss", LoadingElementId = "loader" }))
+        {
+            <input class="form-control" name="name" />
+            <input class="form-control" name="std" />
+            <button id="button" class="btn btn-success"type="submit" >Submit</button>
+            <button id="button" class="btn btn-success" type="submit">Submit</button>
+        }*@
+
+    <input class="form-control" id="name" name="name" />
+    <input class="form-control" id="std" name="std" />
+    <button type="submit" id="SubmitName" value="Submit">Submit</button>
+
+</div>
+<div id="rData"></div>
+
+<script type="text/jscript">
+    $('#SubmitName').click(function () {
+        var url = "/Home/addstu";
+        var name = $('#name').val();
+        var std = $('#std').val();
+        $.get(url, { name: name,std :std  }, function (data) {
+            $("#target").html(data);
+        });
+    })
+
+  
+</script>
+

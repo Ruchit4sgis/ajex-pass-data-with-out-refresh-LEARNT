@@ -1,0 +1,27 @@
+﻿
+<h2>Student Details</h2>
+<table class="table table-bordered">
+    <thead>
+    <th>Name</th>
+    <th>Std</th>
+    </thead>
+    <tbody>
+
+        @foreach (var d in Model)
+            {
+        <tr>
+            <td>
+                @d.Name
+
+            </td>
+
+            <td>
+                @d.Standard
+
+            </td>
+        </tr>
+
+
+        }
+    </tbody>
+</table>    
